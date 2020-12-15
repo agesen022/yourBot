@@ -34,7 +34,7 @@ def index(title="your bot"):
                         talkobj += line_split[2]
 
             talkobj_removed_emoji = ''.join(i for i in talkobj if i not in emoji.UNICODE_EMOJI)
-            talkobj_removed_emoji = ''.join(i for i in talkobj if (i != '[写真]' and i != '[動画]'))
+            talkobj_removed_emoji = ''.join(i for i in talkobj if (i != '[写真]' and i != '[動画]' and i != '[スタンプ]'))
 
             parsed_text = MeCab.Tagger('-Owakati').parse(talkobj_removed_emoji)
 
