@@ -10,14 +10,19 @@
 </head>
 <body>
     <h1>{{ title }}</h1>
-    <form method="POST" action="/app" enctype="multipart/form-data">
+    <form method="POST" action="/" enctype="multipart/form-data">
         <p>LINEトーク履歴のテキストデータまたはテキストファイルを送信してください。</p>
         <textarea id="" name="text"></textarea><br>
-        <input type="file" name="file"><br>
+        <input type="file" name="file" accept=".txt"><br>
         <p>LINE名を入力してください。(区切りなしの名前になるようにしてください。)</p>
         <input type="text" name="name_to_make" placeholder="botを作成したい人">
         <input type="text" name="name_to_reject" placeholder="自分">
         <input type="submit" id="" name="">
+        <ol>
+            {% for i in range(10) %}
+            <li>{{ sentense[i] }}</li>
+            {% endfor %}
+        </ol>
     </form>
 </body>
 </html>
